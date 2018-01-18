@@ -1,0 +1,80 @@
+{
+  "name": "thyssenkrupp/seniorexperts",
+  "description": "Thyssenkrupp Seniorexperts Microsite",
+  "version": "1.0.0",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://php-registry.webartig.intern",
+      "options": {
+        "ssl": {
+          "verify_peer": false,
+          "verify_peer_name": false
+        }
+      }
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "twig/twig": "2.0"
+  },
+  "require-dev": {
+    "webartig/common-releasetools": "^2.0.0"
+  },
+  "config": {
+    "process-timeout": 600
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "scripts": {
+    "prepare": [
+      "@composer install --no-dev --prefer-dist --ignore-platform-reqs",
+      "@composer dump-autoload --optimize",
+      "(cd ./ && npm i && ./node_modules/.bin/gulp)"
+    ],
+    "make": "@composer archive --dir='./builds'",
+    "release": "webartig\\common\\releasetools\\flows\\Release::execute",
+    "hotfix": "webartig\\common\\releasetools\\flows\\Hotfix::execute",
+    "publish": "webartig\\common\\releasetools\\flows\\Publish::execute",
+    "pre-archive-cmd": [ "mv .gitignore .gitignoreTmp" ],
+    "post-archive-cmd": [ "mv .gitignoreTmp .gitignore" ]
+  },
+  "extra": {
+    "wac": {
+      "meta": "meta.php",
+      "entries": {
+        "./dist": "application",
+        "./dist/index.php": "console"
+      },
+      "jobs": []
+    }
+  },
+  "archive": {
+    "exclude": [
+      ".DS_Store",
+      ".idea",
+      ".git*",
+      "composer.json",
+      "composer.lock",
+      "README.md",
+      "/assets",
+      "*.log",
+      ".htaccess",
+      "/builds",
+      "/src",
+      ".vscode",
+      ".vscodetest",
+      ".editorconfig",
+      "*.scss",
+      "/vendor",
+      "/data",
+      "/gulpfile.js",
+      "/index.php",
+      "/node_modules",
+      "/patterns",
+      "/vendor",
+      "/package.json",
+      "/package-lock.json"
+    ]
+  }
+}

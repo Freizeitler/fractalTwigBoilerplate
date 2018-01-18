@@ -1,0 +1,131 @@
+@import '../../../../scss/_settings';
+@import '../../../../scss/_grid';
+
+.pagination {
+  $root: &;
+
+  transform: translateY(90px);
+  opacity: 0;
+  animation: smooth-in-pager 0.5s $global-easing forwards;
+  animation-delay: 0.3s;
+  @include grid(12, 20px);
+  justify-content: flex-end;
+  position: relative;
+  max-width: $global-max-width;
+  margin: 0 auto;
+  margin-top: -80px;
+
+  &__wrapper {
+    position: relative;
+    height: 60px;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  &--6 {
+    align-self: flex-end;
+
+    /* HINT: we use max-width here to not corrupt the grid system */
+    @media (max-width: $global-breakpoint-medium) {
+      width: 100%;
+    }
+
+    &--left {
+      order: 2;
+      text-align: center;
+
+      @media (min-width: $global-breakpoint-medium) {
+        text-align: left;
+        order: 1;
+      }
+    }
+
+    &--right {
+      order: 1;
+
+      @media (min-width: $global-breakpoint-medium) {
+        order: 2;
+      }
+    }
+  }
+
+  &__anchor {
+    position: absolute;
+    top: 0;
+    display: flex;
+    font-size: 16px;
+    max-width: 50%;
+    line-height: 1.2;
+    align-items: center;
+
+    &:hover {
+
+      #{$root}__icon {
+        background-color: $global-color-thyssen-darkblue;
+      }
+    }
+
+    &--prev {
+      left: 10px;
+
+      #{$root}__icon {
+        margin-right: 10px;
+      }
+    }
+
+    &--next {
+      right: 10px;
+
+      #{$root}__icon {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $global-color-light;
+    border: $global-border $global-color-thyssen-blue;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    padding-top: 4px;
+    transition: 0.3s $global-easing;
+
+    &__svg {
+
+      &--left {
+        width: 14px;
+        position: relative;
+        top: 2px;
+        right: 2px;
+      }
+
+      &--right {
+        width: 14px;
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+}
+
+@keyframes smooth-in-pager {
+  0% {
+   transform: translateY(90px);
+   opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+   transform: translateY(0);
+   opacity: 1;
+  }
+}

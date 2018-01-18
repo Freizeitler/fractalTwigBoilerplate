@@ -1,0 +1,28 @@
+{#
+@name: pagination
+*
+@description: the pagination links (prev, next) on the bottom of a page
+@params:
+* addClass: $string
+* prevPageName: $string
+* prevPageLink: $string
+* nextPageName: $string
+* nextPageLink: $string
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/molecules/pagination/css/pagination.css">
+
+<div class="pagination {{ addClass }}">
+
+  <div class="pagination__wrapper pagination--6 pagination--6--left"></div>
+
+  <div class="pagination__wrapper pagination--6 pagination--6--right">
+    <a class="pagination__anchor pagination__anchor--prev" href="{{ prevPageLink }}" rel="prev"><span class="pagination__icon">
+      <img class="pagination__icon__svg--left" src="{{ path }}/assets/images/svg/ico-arrow-left.svg" alt="Teilen auf facebook" /></span> zurück</a>
+    <a class="pagination__anchor pagination__anchor--next" href="{{ nextPageLink }}" rel="next">weiter zu {{ nextPageName }} <span class="pagination__icon">
+      <img class="pagination__icon__svg--right" src="{{ path }}/assets/images/svg/ico-arrow-right.svg" alt="Teilen auf facebook" /></span>
+      </a>
+  </div>
+
+</div>

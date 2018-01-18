@@ -1,0 +1,216 @@
+@import '../../../../scss/_settings';
+
+.controls {
+  $root: &;
+
+  justify-content: flex-end;
+  display: flex;
+
+  &:hover {
+
+    .pageNavigation {
+      will-change: right;
+    }
+  }
+
+  &__menu  {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    &--sub {
+      background-color: $global-color-light;
+      border: $global-border $global-color-thyssen-blue;
+      height: 54px;
+      padding: 7px;
+      box-sizing: border-box;
+      box-shadow: $global-box-shadow;
+      border-radius: 27px;
+      position: absolute;
+      right: -9px;
+      top: -7px;
+      opacity: 0;
+      max-width: 0;
+      pointer-events: none;
+      overflow: hidden;
+      transition: max-width 0.3s $global-easing;
+
+      #{$root}__item {
+        opacity: 0;
+        transition: opacity 0.2s $global-easing;
+        transition-delay: 0;
+      }
+    }
+  }
+
+  @media (min-width: $global-breakpoint-tiny) {
+
+    .controls__item--share {
+      display: inline-block;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--level2 {
+      position: relative;
+      z-index: 3;
+    }
+
+    &--share {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $global-color-light;
+    border: $global-border $global-color-thyssen-blue;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: $global-color-thyssen-blue;
+    transition: 0.3s $global-easing;
+
+    &--open-share {
+      padding-right: 3px;
+      padding-top: 4px;
+    }
+
+    &--open-size {
+      padding-top: 5px;
+    }
+
+    &--size1 {
+      line-height: 3;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--size2 {
+      font-size: 30px;
+      line-height: 1.5;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--size3 {
+      font-size: 38px;
+      line-height: 1;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--navi {
+      padding-top: 4px;
+    }
+
+    &:hover{
+      background-color: $global-color-thyssen-darkblue;
+    }
+
+    &--share {
+      padding-top: 7px;
+    }
+
+    &--close {
+      padding-top: 5px;
+      background-color: $global-color-thyssen-darkblue;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    /* TODO: find solution for keyboard */
+    &:checked/*, &:focus*/ {
+
+      ~ #{$root}__list--sub {
+        opacity: 1;
+        max-width: 400px;
+        pointer-events: auto;
+
+        #{$root}__item {
+          opacity: 1;
+
+          &:nth-child(1) {
+            transition-delay: 0.5s;
+           }
+
+           &:nth-child(2) {
+             transition-delay: 0.4s;
+           }
+
+            &:nth-child(3) {
+             transition-delay: 0.3s;
+           }
+
+            &:nth-child(4) {
+             transition-delay: 0.2s;
+           }
+
+            &:nth-child(5) {
+             transition-delay: 0.1s;
+           }
+
+            &:nth-child(6) {
+             transition-delay: 0s;
+           }
+        }
+      }
+    }
+
+    &:hover {
+
+      + #{$root}__button {
+        background-color: $global-color-thyssen-darkblue;
+      }
+    }
+  }
+
+  .pageLabel {
+    display: none;
+    margin: 0;
+    margin-left: 40px;
+    position: relative;
+    z-index: 2;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      display: inline-block;
+    }
+  }
+}

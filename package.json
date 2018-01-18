@@ -1,0 +1,17 @@
+{
+  "name": "fractal-twig-boilerplate",
+  "version": "0.1.0",
+  "dependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "@frctl/twig": "git+https://github.com/frctl/twig.git",
+    "frctl-twig": "git+https://github.com/LostKobrakai/twig.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "pump": "^1.0.2"
+  }
+}

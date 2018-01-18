@@ -1,0 +1,55 @@
+@import '../../../../scss/_settings';
+@import '../../../../scss/_grid';
+
+.teaserNavigation {
+  background-color: $global-color-grey;
+  padding: 20px;
+  margin: -20px;
+  margin-top: 60px;
+
+  &__headline {
+    margin: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__grid {
+    @include grid(12, 20px);
+    padding: 0;
+  }
+
+  &__item {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  &__teaser {
+    margin: 0;
+    align-items: stretch;
+
+    &__image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    &__caption {
+      padding: 20px 10px;
+    }
+  }
+
+  &__anchor {
+    display: block;
+    background-color: $global-color-light;
+    height: 100%;
+    color: $global-color-text;
+    font-size: 1em;
+    line-height: 1.4;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "webartig/common-releasetools",
+    "version": "2.0.2",
+    "description": "webArtig Common Release Tools for developing and deploying applications",
+    "type": "library",
+    "license": "UNLICENSED",
+    "authors": [
+        {
+            "name": "Daniel Meisl",
+            "email": "d.meisl@webartig.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "webartig\\common\\releasetools\\": "src/"
+        }
+    },
+    "require": {
+        "vierbergenlars/php-semver": "^3.0"
+    },
+    "require-dev": {
+        "composer-plugin-api": "^1.1"
+    },
+    "scripts": {
+        "release": "webartig\\common\\releasetools\\flows\\Release::execute",
+        "hotfix": "webartig\\common\\releasetools\\flows\\Hotfix::execute",
+        "publish": "webartig\\common\\releasetools\\flows\\Publish::execute"
+    }
+}

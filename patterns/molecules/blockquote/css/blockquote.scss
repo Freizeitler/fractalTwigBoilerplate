@@ -1,0 +1,65 @@
+@import '../../../../scss/_settings';
+@import '../../../../scss/_grid';
+
+.blockquote {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+
+  &__author {
+    width: 100%;
+    margin: 0;
+    margin-top: 60px;
+    text-align: center;
+    padding-right: 0;
+    box-sizing: border-box;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      text-align: right;
+      padding-right: 40px;
+    }
+
+    &__image{
+      border-radius: 50%;
+      max-width: 182px;
+      height: auto;
+      display: inline-block;
+    }
+
+    &__desc {
+      font-size: 1em;
+      display: inline-block;
+      margin-right: 0;
+
+      @media (min-width: $global-breakpoint-tiny) {
+        margin-right: 30%;
+      }
+    }
+  }
+
+  &__opening-quote {
+    position: absolute;
+    left: -10px;
+    top: -40px;
+    width: 40px;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      width: auto;
+      left: -40px;
+      top: -80px;
+    }
+  }
+
+  &__closing-quote {
+    position: absolute;
+    right: -10px;
+    bottom: -40px;
+    width: 40px;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      width: 130px;
+      right: 0;
+      bottom: -20px;
+    }
+  }
+}

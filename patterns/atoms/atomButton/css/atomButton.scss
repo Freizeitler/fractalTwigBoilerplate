@@ -1,0 +1,34 @@
+@import '../../../../scss/_settings';
+
+.atomButton {
+  background-color: $global-color-thyssen-blue;
+  border: $global-border $global-color-thyssen-blue;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 0;
+  color: $global-color-light;
+
+  &:hover {
+    background-color: $global-color-thyssen-darkblue;
+    border: $global-border $global-color-thyssen-darkblue;
+    box-shadow: $global-box-shadow;
+    text-decoration: none;
+  }
+
+  &--dark {
+    background-color: transparent;
+    border: $global-border $global-color-light;
+
+    &:hover {
+      background-color: $global-color-thyssen-darkblue;
+      border: $global-border $global-color-light;
+      box-shadow: $global-box-shadow;
+    }
+  }
+}

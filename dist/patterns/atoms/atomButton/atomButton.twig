@@ -1,0 +1,22 @@
+{#
+@name: atomButton
+*
+@description: This component can be a button or link that looks like a button. You can do a lot here with @params.
+*
+@params:
+* text: $string
+* element: button | anchor
+* type: button (default) | submit [only if button]
+* href: $string [only if anchor]
+* title: $string [only if anchor]
+* theme: dark | light (default: light)
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/atoms/atomButton/css/atomButton.css">
+
+{% if element == 'button' %}
+<button type="{{ type | default('button') }}" class="atomButton{% if theme %} atomButton--{{ theme }}{% endif %}">{{ text | default('Button') }}</button>
+{% else %}
+<a href="{{ href }}" title="{{ title }}" class="atomButton{% if theme %} atomButton--{{ theme }}{% endif %}">{{ text | default('Anchor') }}</a>
+{% endif %}

@@ -1,0 +1,34 @@
+@import '../../../../scss/_settings';
+
+.brandLogo {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+
+  &__desktop {
+    display: none;
+    top: -20px;
+    position: relative;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      display: block;
+    }
+
+    &__g {
+      fill: $global-color-thyssen-blue;
+    }
+  }
+
+  &__mobile {
+    display: block;
+    margin-top: 5px;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      display: none;
+    }
+
+    &__g {
+      fill: $global-color-thyssen-blue;
+    }
+  }
+}

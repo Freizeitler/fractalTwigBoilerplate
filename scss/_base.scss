@@ -1,0 +1,100 @@
+/*
+@name: base
+*
+@description:
+* Global styles that are applied to the entire project live here.
+*
+*/
+
+@import '_settings';
+@import '_helpers';
+
+@font-face {
+  font-family: 'TKTTypeRegular';
+  src: url('../font/TKTypeRegular.eot'); /* IE9 Compat Modes */
+  src: url('../font/TKTypeRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/tktyperegular-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/tktyperegular-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../font/TKTypeRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../font/TKTypeRegular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+  font-family: 'TKTTypeRegular', sans-serif;
+  font-size: $global-font-size-1;
+  line-height: 2;
+  color: $global-color-text;
+  margin: 0;
+  background-color: #efefef;
+  width: 100%;
+  overflow-x: hidden;
+  transition: font-size 0.1s;
+  background-color: $global-color-light;
+}
+
+body.font-size-1 {
+  font-size: $global-font-size-1;
+}
+
+body.font-size-2 {
+  font-size: $global-font-size-2;
+}
+
+body.font-size-3 {
+  font-size: $global-font-size-3;
+}
+
+a {
+  color: $global-color-thyssen-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  color: $global-color-thyssen-darkblue;
+  font-weight: 400;
+  font-size: $global-font-size-h2;
+  line-height: 1.4;
+
+  @media (min-width: $global-breakpoint-tiny) {
+    font-size: $global-font-size-h1;
+    line-height: 1.6;
+  }
+}
+
+button {
+  font-family: 'TKTTypeRegular', sans-serif;
+  font-size: $global-font-size-1;
+}
+
+ul.ds-colored-bullets {
+  @include ds-special-bullets ("\2022", $global-color-thyssen-blue);
+}
+
+.bv-text-center {
+  text-align: center;
+}
+
+// Animations
+@keyframes come-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY($global-come-in-range);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

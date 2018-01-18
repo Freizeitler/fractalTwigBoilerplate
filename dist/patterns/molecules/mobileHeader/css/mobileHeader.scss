@@ -1,0 +1,14 @@
+@import '../../../../scss/_settings';
+
+ .mobileHeader {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  @media (min-width: $global-breakpoint-medium) {
+    display: none;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+ }

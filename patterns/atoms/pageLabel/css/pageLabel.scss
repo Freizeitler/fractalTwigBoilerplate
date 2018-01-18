@@ -1,0 +1,20 @@
+@import '../../../../scss/_settings';
+
+.pageLabel {
+  text-align: center;
+  margin: 0;
+  margin-top: 0;
+
+  @media (min-width: $global-breakpoint-tiny) {
+    margin-top: 35vh;
+    text-align: right;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__g {
+    fill: $global-color-thyssen-blue;
+  }
+}

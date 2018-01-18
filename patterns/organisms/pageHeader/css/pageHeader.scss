@@ -1,0 +1,76 @@
+@import '../../../../scss/_settings';
+@import '../../../../scss/_grid';
+
+.pageHeader {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  transform: translateY(-100px);
+  opacity: 0;
+  animation: smooth-in 0.2s $global-easing forwards;
+  background: $global-color-light;
+
+  @media (min-width: $global-breakpoint-tiny) {
+    background-color: transparent;
+    animation: smooth-in 0.9s $global-easing forwards;
+  }
+
+  &__inner {
+    height: 60px;
+    max-width: $global-max-width;
+    justify-content: space-between;
+    @include grid(12, 20px);
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    @media (min-width: $global-breakpoint-tiny) {
+      height: $global-header-height;
+      height: 100px;
+    }
+
+    &--6 {
+      padding-top: 10px;
+
+      @media (min-width: $global-breakpoint-tiny) {
+        padding-top: 40px;
+      }
+    }
+
+    &__left {
+
+      @media (max-width: $global-breakpoint-tiny) {
+        background: $global-color-light !important;
+      }
+    }
+
+    &__right {
+
+      @media (max-width: $global-breakpoint-tiny) {
+        background: $global-color-light !important;
+      }
+    }
+  }
+
+  &__headline {
+    margin: 0;
+  }
+}
+
+@keyframes smooth-in {
+  0% {
+   transform: translateY(-90px);
+   opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+   transform: translateY(0);
+   opacity: 1;
+  }
+}

@@ -1,0 +1,34 @@
+/*
+@name: grid
+*
+@description
+* Simple flexbox grid mixin (12er grid, 20px gutter)
+* @init: @include grid([overall grid count], [gutter width]);
+* @html:
+*   <elem class="elem elem--[overall grid count] /> -> wrapper
+*   <elem class="elem--inner elem--[overall grid count] /> -> nested grid
+*   <elem class="elem elem--[n] /> -> column width: [overall grid count] / [n]
+*
+*/
+
+@mixin flex-format() {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+@mixin grid ($grid, $gutter) {
+  @include flex-format();
+  padding: $gutter / 2;
+
+  &--inner {
+    padding: 0;
+    @include flex-format();
+  }
+  @for $i from 1 through $grid {
+    &--#{$i} {
+      width: percentage($i / $grid);
+      flex: 0 0 auto;
+    }
+  }
+}

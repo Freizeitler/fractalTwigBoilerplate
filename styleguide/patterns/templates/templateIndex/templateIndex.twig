@@ -1,0 +1,50 @@
+{#
+@name: templateIndex
+*
+@description: The layout for the start page
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/templates/templateIndex/css/templateIndex.css">
+
+<div class="templateIndex__wrapper">
+
+  {% include app.request.getSchemeAndHttpHost() ~ "patterns/organisms/pageHeader/pageHeader.twig" with {
+      'headline': data.header.text,
+      'pageLabel': false
+  } %}
+
+  <div class="templateIndex__main">
+
+    <section class="templateIndex__main--6"></section>
+
+    <section class="templateIndex__main--6">
+
+     {% embed 'atoms/pageLabel/pageLabel.twig' %}{% endembed %}
+
+     {% embed 'atoms/scrollIndicator/scrollIndicator.twig' %}{% endembed %}
+
+    </section>
+
+  </div>
+
+  <div class="templateIndex__main templateIndex__main--hidden js-triggerOffsetQuote">
+
+    <section class="templateIndex__main--6"></section>
+
+    <section class="templateIndex__main--6">
+
+     {% embed "molecules/blockquote/blockquote.twig" %}{% endembed %}
+
+    </section>
+
+  </div>
+
+  {% include "molecules/pagination/pagination.twig" with {
+    prevPageLink: 'index.php',
+    nextPageLink: 'page3.php',
+    nextPageName: 'Page 3',
+    addClass: 'js-triggerOffsetPagination'
+  } %}
+
+</div>

@@ -1,0 +1,21 @@
+{#
+@name: mobileHeader
+*
+@description: On mobile, the bg images switches to a header image.
+* TODO: Add images for medium sized viewports
+@params:
+* addClass: $string
+* mobileImage: $string
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/molecules/mobileHeader/css/mobileHeader.css">
+
+<div class="mobileHeader">
+  <img class="mobileHeader__image"
+    srcset="{{ static.path }}/assets/dummy/{{ mobileImage }} 320w{#,
+            data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== 1100w#}"
+    sizes="(max-width: 1099px) 100%{#,
+           (min-width: 1100px) 100%#}"
+    src="{{ static.path }}/assets/dummy/{{ mobileImage }}" alt="" />
+</div>

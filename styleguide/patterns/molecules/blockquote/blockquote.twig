@@ -1,0 +1,24 @@
+{#
+@name: blockquote
+*
+@description: Blockquotes with blue quotes.
+@param:
+* addClass: $string
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/molecules/blockquote/css/blockquote.css">
+
+<blockquote class="blockquote {{ addClass }}">
+  <p>{{ data.index.text1 | raw }}</p>
+
+  <figure class="blockquote__author">
+    <img class="blockquote__author__image" src="http://via.placeholder.com/350x350/666666" alt="" />
+    <figcaption class="blockquote__author__desc">
+      {{ data.index.text2 | raw }}
+    </figcaption>
+  </figure>
+
+  <img class="blockquote__opening-quote" src="{{ path }}/assets/images/svg/ico-anf-hrung.svg" alt="" />
+  <img class="blockquote__closing-quote" src="{{ path }}/assets/images/svg/ico-anf-hrung.svg" alt="" />
+</blockquote>

@@ -1,0 +1,28 @@
+{#
+@name: pageHeader
+*
+@description: The layout for the start page
+*
+@acceptsParams:
+* pageLabel: $boolean
+* bgFillLeft: $string (url | color)
+* bgFillRight: $string (url | color)
+*
+#}
+
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/organisms/pageHeader/css/pageHeader.css">
+
+<header class="pageHeader" role="banner">
+
+  <div class="pageHeader__inner">
+
+    <div class="pageHeader__inner__left pageHeader__inner--6" style="background: {{ bgFillLeft | default('transparent') }};">
+      {% include "molecules/brandLogo/brandLogo.twig" %}
+    </div>
+
+    <div class="pageHeader__inner__right pageHeader__inner--6" style="background: {{ bgFillRight | default('transparent') }};">
+      {% include "molecules/controls/controls.twig" with { pageLabel: pageLabel } %}
+  </div>
+
+</header>

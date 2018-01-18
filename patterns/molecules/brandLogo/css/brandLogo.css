@@ -1,0 +1,1 @@
+.brandLogo{margin:0;position:relative;z-index:2}.brandLogo__desktop{display:none;top:-20px;position:relative}@media (min-width: 1024px){.brandLogo__desktop{display:block}}.brandLogo__desktop__g{fill:#00a0f0}.brandLogo__mobile{display:block;margin-top:5px}@media (min-width: 1024px){.brandLogo__mobile{display:none}}.brandLogo__mobile__g{fill:#00a0f0}

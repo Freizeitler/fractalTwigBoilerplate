@@ -1,0 +1,94 @@
+{#
+@name: controls
+*
+@description: The control panel on top of teh page
+*
+@params:
+* pageLabel: $boolean
+*
+#}
+
+<link rel="stylesheet" property="stylesheet" href="{{ path }}/patterns/molecules/controls/css/controls.css">
+
+<section class="controls {{ addClass }}">
+
+    <menu class="controls__menu">
+
+      <ul class="controls__list">
+
+        {# Share controls: #}
+        <li class="controls__item  controls__item--share">
+
+          <input class="controls__toggle" type="checkbox" id="share-panel" />
+
+          <label class="controls__button controls__button--open-share js-openShare" aria-label="share" for="share-panel">
+            <img src="{{ path }}/assets/images/svg/ico-share.svg" alt="Teilen" />
+          </label>
+
+          <ul class="controls__list controls__list--sub">
+            <li class="controls__item">
+              <a href="" class="controls__button controls__button--share"><img src="{{ path }}/assets/images/svg/ico-twitter.svg" alt="Teilen auf Twitter" /></a>
+            </li>
+            <li class="controls__item">
+              <a href="" class="controls__button controls__button--share"><img src="{{ path }}/assets/images/svg/ico-facebook.svg" alt="Teilen auf facebook" /></a>
+            </li>
+            <li class="controls__item">
+              <a href="" class="controls__button controls__button--share"><img src="{{ path }}/assets/images/svg/ico-linkedin.svg" alt="Teilen auf linkedIn" /></a>
+            </li>
+            <li class="controls__item">
+              <a href="" class="controls__button controls__button--share"><img src="{{ path }}/assets/images/svg/ico-xing.svg" alt="Teilen auf Xing" /></a>
+            </li>
+            <li class="controls__item">
+              <a href="" class="controls__button controls__button--share"><img src="{{ path }}/assets/images/svg/ico-mail.svg" alt="Teilen per E-Mail" /></a>
+            </li>
+            <li class="controls__item">
+              <button class="controls__button controls__button--close" type="button"><img src="{{ path }}/assets/images/svg/ico-close.svg" alt="Schließen" /></button>
+            </li>
+          </ul>
+
+        </li>
+
+        {# Font size controls: #}
+        <li class="controls__item controls__item--level2">
+
+          <input class="controls__toggle" type="checkbox" id="font-size-panel" />
+
+          <label class="controls__button controls__button--open-size js-openFontSize" aria-label="Schriftgrößen ändern" for="font-size-panel">
+            <img src="{{ path }}/assets/images/svg/ico-size.svg" alt="Schriftgröße" />
+          </label>
+
+          <ul class="controls__list controls__list--sub">
+            <li class="controls__item">
+              <button class="controls__button controls__button--size1 js-fontSize-1" type="button" aria-label="Normale Schriftgröße">A</button>
+            </li>
+            <li class="controls__item">
+              <button class="controls__button controls__button--size2 js-fontSize-2" type="button" aria-label="Mittlere Schriftgröße">A</button>
+            </li>
+            <li class="controls__item">
+              <button class="controls__button controls__button--size3 js-fontSize-3" type="button" aria-label="Große Schriftgröße">A</button>
+            </li>
+            <li class="controls__item">
+              <button class="controls__button controls__button--close" type="button"><img src="{{ path }}/assets/images/svg/ico-close.svg" alt="Schließen" /></button>
+            </li>
+          </ul>
+
+        </li>
+
+        {# Navigation controls: #}
+        <li class="controls__item">
+          <button class="controls__button controls__button--navi js-openNavigation" aria-label="navigation" type="button">
+            <img src="{{ path }}/assets/images/svg/ico-navi.svg" alt="" />
+          </button>
+        </li>
+
+      </ul>
+
+    </menu>
+
+    {% embed 'molecules/pageNavigation/pageNavigation.twig' %}{% endembed %}
+
+    {% if pageLabel == true %}
+    {% embed 'atoms/pageLabel/pageLabel.twig' %}{% endembed %}
+    {% endif %}
+
+  </section>

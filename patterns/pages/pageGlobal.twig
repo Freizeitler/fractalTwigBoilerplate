@@ -1,0 +1,31 @@
+{#
+@name: pageGlobal
+*
+@description: This is the wrapper for a common template
+*
+#}
+<!doctype html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Thyssen Krupp Senior Experts</title>
+    {# TODO: add description #}
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="{{ path }}/assets/css/app.css">
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="assets/css/ie.css">
+    <![endif]-->
+  </head>
+
+  <body>
+    {% block content %} {% endblock %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ path }}/assets/js/app.js"></script>
+  </body>
+
+</html>

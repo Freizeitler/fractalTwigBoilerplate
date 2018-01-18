@@ -1,0 +1,48 @@
+/*
+@name: settings
+*
+@description:
+* The global settings file. Just use variables here
+*
+*/
+
+// Typo
+$global-font-family: sans-serif;
+$global-font-size-1: 1em; /* = 16px */
+$global-font-size-2: 1.313em; /* = 21px */
+$global-font-size-3: 1.875em; /* = 30px */
+
+$global-font-size-h1: 38px;
+$global-font-size-h2: 36px;
+
+// Colors
+$global-color-text: #666;
+$global-color-light: #fff;
+$global-color-grey: #eee;
+
+$global-color-thyssen-blue: #00a0f0;
+$global-color-thyssen-darkblue: #003c7d;
+$global-color-thyssen-orange: #ffb400;
+
+// Layout
+$global-max-width: 1400px;
+$global-header-height: 80px;
+$global-footer-height: 60px;
+
+// Misc
+$global-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+$global-border: solid 2px;
+
+// Breakpoints
+$global-breakpoint-medium: 1024px;
+/*$global-breakpoint-small: 768px;
+$global-breakpoint-tiny: 600px;*/
+$global-breakpoint-small: $global-breakpoint-medium;
+$global-breakpoint-tiny: $global-breakpoint-medium;
+
+// Easing
+$global-easing: cubic-bezier(0.390,  0.575, 0.565, 1.000);
+
+// Animation Settings
+$global-come-in-range: 20px;
+$global-text-in-delay: 0.6s;
